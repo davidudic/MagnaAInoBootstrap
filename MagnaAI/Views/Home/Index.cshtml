@@ -1,0 +1,115 @@
+﻿@using System.Text.Json
+@model MagnaAI.Models.AdaptiveCardModel
+
+<!-- Views/Home/Index.cshtml -->
+@{
+    ViewData["Title"] = "Domů";
+}
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>MagnaAI Rozcestník</h1>
+    <p>Interní portál pro přístup k AI nástrojům, modelům a vzdělávacím materiálům</p>
+    <div class="hero-buttons">
+        <a href="#models" class="btn btn-primary">Zobrazit modely</a>
+        <a href="#articles" class="btn btn-secondary">Zobrazit články</a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Aktuální informace</h2>
+    <div class="adaptiveCardsWrapper" id="adaptiveCardsContainer">
+        @{
+            if (ViewData["Model"] is AdaptiveCardModel model)
+            {
+                for(int i = 0; i < model.AdaptiveCardJsonList.Count; i++)
+                {
+                    <div class="adaptiveCardContainer"></div>
+                    
+                    <script type="module">
+                        loadAdaptiveCardStyle().then(adaptivecardstyle => {
+                            var adaptiveCard = new AdaptiveCards.AdaptiveCard();
+
+                            var acstyle = adaptivecardstyle;
+
+                            console.log('acstyle : ' + acstyle);
+
+                            adaptiveCard.hostConfig = new AdaptiveCards.HostConfig(acstyle);
+
+                            var cardJson = @Html.Raw(@model.AdaptiveCardJsonList[i])
+
+                            adaptiveCard.parse(cardJson);
+
+                            var renderedCard = adaptiveCard.render();
+
+                            document.getElementsByClassName("adaptiveCardContainer")[@i].appendChild(renderedCard);
+                        });
+
+                        async function loadAdaptiveCardStyle() {
+                            try {
+                                const response = await fetch('/js/adaptivecardstyle.json');
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                const data = await response.json(); // Parse the JSON data
+                                console.log(data); // Handle the JSON data here
+                                return data; // Return the JSON object
+                            } catch (error) {
+                                console.error('There was a problem with the fetch operation:', error);
+                            }
+                        }
+                            
+                    </script>
+
+                }
+            }
+        }
+    </div>
+</section>
+
+
+<!-- AI Models Section -->
+<section class="section section-gray" id="models">
+    <h2>AI Modely</h2>
+    <div class="models-grid">
+        <div class="model-card">
+            <h3>MAVIS</h3>
+            <p>Interní AI asistent Magna International určený pro práci v rámci společnosti.</p>
+            <a href="https://mavis.magna.com/" target="_blank">Otevřít MAVIS →</a>
+        </div>
+        <div class="model-card">
+            <h3>ChatGPT</h3>
+            <p>Pokročilý jazykový model od OpenAI pro obecné využití.</p>
+            <a href="https://chat.openai.com/" target="_blank">Otevřít ChatGPT →</a>
+        </div>
+        <div class="model-card">
+            <h3>Google Gemini</h3>
+            <p>Multimodální AI model od Google pro text, obrázky a kód.</p>
+            <a href="https://gemini.google.com/" target="_blank">Otevřít Gemini →</a>
+        </div>
+        <div class="model-card">
+            <h3>Claude</h3>
+            <p>AI asistent od Anthropic zaměřený na bezpečnost a užitečnost.</p>
+            <a href="https://claude.ai/" target="_blank">Otevřít Claude →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Articles Section Preview -->
+<section class="section" id="articles">
+    <h2>Vzdělávací materiály</h2>
+    <div class="articles-grid">
+        <div class="article-card">
+            <h3>Základy práce s AI</h3>
+            <p>Kompletní průvodce pro začátečníky v oblasti umělé inteligence.</p>
+            <a href="/Home/Articles" class="btn btn-primary">Zobrazit všechny články</a>
+        </div>
+    </div>
+</section>
+
+<!--<script>
+     Initialize Adaptive Cards when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        loadAdaptiveCards();
+    });
+</script>-->

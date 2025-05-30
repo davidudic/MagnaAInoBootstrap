@@ -1,0 +1,9 @@
+1) add	AdaptiveCardModel.cs
+2) add	LayoutViewModel.cs + MenuItem class, UserInfo class
+3) add	Connected Services
+
+4) HomeController.cs - Index() volání služby + předání do proměnné "vm"
+5) Index.cshtml - zpracování ViewData["Model"]
+
+6) site.css - nastylovat
+7) zakomentování testovacích dat

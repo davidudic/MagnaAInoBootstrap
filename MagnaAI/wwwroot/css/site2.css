@@ -1,0 +1,119 @@
+﻿.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.material-card {
+    background: #ffffff;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.2s ease;
+}
+
+    .material-card:hover {
+        border-color: #E22E2F;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+    .card-header h3 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+    }
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.badge-internal {
+    background-color: #28a745;
+    color: white;
+}
+
+.card-description {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-features {
+    margin-bottom: 24px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+    .icon.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .icon.warning {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #E22E2F;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #c12527;
+        text-decoration: none;
+        color: white;
+    }
+
+@media (max-width: 768px) {
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

@@ -1,0 +1,44 @@
+﻿<!-- Views/Shared/_Layout.cshtml -->
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MagnaAI</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site2.css" />
+    <script src="https://unpkg.com/adaptivecards@2.9.0/dist/adaptivecards.min.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="/" class="logo-link">
+                    <img src="~/images/logo-placeholder.png" alt="MagnaAI" class="logo" />
+                </a>
+            </div>
+            <nav class="navbar-nav">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">Domů</a>
+                <a asp-area="" asp-controller="Home" asp-action="Models" class="nav-link">Modely</a>
+                <a asp-area="" asp-controller="Home" asp-action="Articles" class="nav-link">Články</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Magna International Inc. Všechna práva vyhrazena.</p>
+            <div class="footer-links">
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">Ochrana osobních údajů</a>
+                <a asp-area="" asp-controller="Home" asp-action="Support">Podpora</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/adaptive-cards.js"></script>
+</body>
+</html> 

@@ -1,0 +1,86 @@
+﻿<!-- Views/Home/Models.cshtml -->
+@{
+    ViewData["Title"] = "AI Modely";
+}
+
+<section class="section">
+    <h1>AI Modely a nástroje</h1>
+    <p>Přístup k doporučeným AI nástrojům pro práci</p>
+
+    <div class="models-grid">
+        <div class="model-card featured">
+            <div class="model-header">
+                <h3>MAVIS</h3>
+                <span class="model-badge internal">Interní</span>
+            </div>
+            <p>Oficiální AI asistent Magna International. Jediný schválený nástroj pro práci s firemními daty.</p>
+            <div class="model-features">
+                <ul>
+                    <li>✓ Bezpečné pro firemní data</li>
+                    <li>✓ Integrace s Magna systémy</li>
+                    <li>✓ Podpora českého jazyka</li>
+                </ul>
+            </div>
+            <a href="https://mavis.magna.com/" target="_blank" class="btn btn-primary">Otevřít MAVIS</a>
+        </div>
+
+        <div class="model-card">
+            <div class="model-header">
+                <h3>ChatGPT</h3>
+                <span class="model-badge external">Externí</span>
+            </div>
+            <p>Pokročilý jazykový model od OpenAI. Pouze pro obecné úkoly bez firemních dat.</p>
+            <div class="model-features">
+                <ul>
+                    <li>⚠ Pouze pro obecné dotazy</li>
+                    <li>⚠ Bez firemních informací</li>
+                    <li>✓ Silný v programování</li>
+                </ul>
+            </div>
+            <a href="https://chat.openai.com/" target="_blank" class="btn btn-secondary">Otevřít ChatGPT</a>
+        </div>
+
+        <div class="model-card">
+            <div class="model-header">
+                <h3>Google Gemini</h3>
+                <span class="model-badge external">Externí</span>
+            </div>
+            <p>Multimodální AI model od Google pro práci s textem, obrázky a kódem.</p>
+            <div class="model-features">
+                <ul>
+                    <li>⚠ Pouze pro obecné dotazy</li>
+                    <li>✓ Práce s obrázky</li>
+                    <li>✓ Analýza dokumentů</li>
+                </ul>
+            </div>
+            <a href="https://gemini.google.com/" target="_blank" class="btn btn-secondary">Otevřít Gemini</a>
+        </div>
+
+        <div class="model-card">
+            <div class="model-header">
+                <h3>Claude</h3>
+                <span class="model-badge external">Externí</span>
+            </div>
+            <p>AI asistent od Anthropic zaměřený na bezpečnost a analytické úkoly.</p>
+            <div class="model-features">
+                <ul>
+                    <li>⚠ Pouze pro obecné dotazy</li>
+                    <li>✓ Dlouhé dokumenty</li>
+                    <li>✓ Analýza a sumarizace</li>
+                </ul>
+            </div>
+            <a href="https://claude.ai/" target="_blank" class="btn btn-secondary">Otevřít Claude</a>
+        </div>
+    </div>
+
+    <div class="security-notice">
+        <h3>⚠ Bezpečnostní upozornění</h3>
+        <p>U externích AI nástrojů <strong>nikdy nezadávejte</strong>:</p>
+        <ul>
+            <li>Firemní informace a data</li>
+            <li>Osobní údaje zaměstnanců</li>
+            <li>Obchodní tajemství</li>
+            <li>Technické specifikace produktů</li>
+        </ul>
+    </div>
+</section>

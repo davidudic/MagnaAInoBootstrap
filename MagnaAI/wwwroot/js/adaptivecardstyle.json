@@ -1,0 +1,51 @@
+{
+  "spacing": {
+    "small": 8,
+    "default": 16,
+    "medium": 24,
+    "large": 32,
+    "extraLarge": 40
+  },
+  "separator": {
+    "lineThickness": 1,
+    "lineColor": "#ACACAC"
+  },
+  "fontFamily": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+  "fontSizes": {
+    "small": 12,
+    "default": 14,
+    "medium": 16,
+    "large": 18,
+    "extraLarge": 20
+  },
+  "fontWeights": {
+    "lighter": 200,
+    "default": 400,
+    "bolder": 600
+  },
+  "containerStyles": {
+    "default": {
+      "backgroundColor": "#FFFFFF",
+      "foregroundColors": {
+        "default": {
+          "default": "#000000",
+          "subtle": "#ACACAC"
+        },
+        "accent": {
+          "default": "#E22E2F",
+          "subtle": "#E22E2F"
+        },
+        "warning": {
+          "default": "#FF6B35",
+          "subtle": "#FF6B35"
+        }
+      }
+    }
+  },
+  "actions": {
+    "buttonSpacing": 8,
+    "maxActions": 5,
+    "actionsOrientation": "horizontal",
+    "actionAlignment": "left"
+  }
+}
